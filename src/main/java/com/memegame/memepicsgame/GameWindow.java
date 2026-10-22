@@ -178,7 +178,7 @@ public class GameWindow extends javax.swing.JFrame {
         btnSlot8 = new javax.swing.JButton();
         btnSlot9 = new javax.swing.JButton();
         btnSlot10 = new javax.swing.JButton();
-        btnClue = new javax.swing.JButton();
+        btnShuffle = new javax.swing.JButton();
         lblCredits = new javax.swing.JLabel();
         btnPanel = new javax.swing.JPanel();
         btnLetter1 = new javax.swing.JButton();
@@ -194,6 +194,7 @@ public class GameWindow extends javax.swing.JFrame {
         btnLetter11 = new javax.swing.JButton();
         btnLetter12 = new javax.swing.JButton();
         btnReturntoThemes = new javax.swing.JButton();
+        btnClue1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GameWindow");
@@ -251,11 +252,11 @@ public class GameWindow extends javax.swing.JFrame {
         btnSlot10.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot10);
 
-        btnClue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnClue.setText("Clue");
-        btnClue.setActionCommand("");
-        btnClue.setPreferredSize(new java.awt.Dimension(60, 40));
-        btnClue.addActionListener(this::btnCluebtnLetter1ActionPerformed);
+        btnShuffle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnShuffle.setText("Shuffle");
+        btnShuffle.setActionCommand("");
+        btnShuffle.setPreferredSize(new java.awt.Dimension(60, 40));
+        btnShuffle.addActionListener(this::btnShufflebtnLetter1ActionPerformed);
 
         lblCredits.setBackground(new java.awt.Color(255, 255, 255));
         lblCredits.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -330,6 +331,12 @@ public class GameWindow extends javax.swing.JFrame {
         btnReturntoThemes.setActionCommand("");
         btnReturntoThemes.addActionListener(this::btnReturntoThemesActionPerformed);
 
+        btnClue1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnClue1.setText("Clue");
+        btnClue1.setActionCommand("");
+        btnClue1.setPreferredSize(new java.awt.Dimension(60, 40));
+        btnClue1.addActionListener(this::btnClue1btnLetter1ActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -360,16 +367,18 @@ public class GameWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnClue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(251, 251, 251))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnClue1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnShuffle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(249, 249, 249))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblPic1, lblPic2, lblPic3, lblPic4});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,13 +391,16 @@ public class GameWindow extends javax.swing.JFrame {
                     .addComponent(lblPic4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(btnSlotPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnClue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))
-                    .addComponent(btnPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(btnClue1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnShuffle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblPic1, lblPic2, lblPic3, lblPic4});
@@ -438,7 +450,16 @@ public class GameWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSlot1ActionPerformed
 
-    private void btnCluebtnLetter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCluebtnLetter1ActionPerformed
+    private void btnShufflebtnLetter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShufflebtnLetter1ActionPerformed
+       setupLetters(current.getAnswer());
+    }//GEN-LAST:event_btnShufflebtnLetter1ActionPerformed
+
+    private void btnReturntoThemesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturntoThemesActionPerformed
+        new ThemeWindow().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnReturntoThemesActionPerformed
+
+    private void btnClue1btnLetter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClue1btnLetter1ActionPerformed
         if (roundDone) {
             return;
         }
@@ -457,7 +478,7 @@ public class GameWindow extends javax.swing.JFrame {
                 for (JButton b : slotButtons) {
                     b.setForeground(java.awt.Color.BLACK);
                 }
-            }
+           }
         }
 
         // Pass 2: fill the FIRST empty slot with its correct letter
@@ -477,13 +498,8 @@ public class GameWindow extends javax.swing.JFrame {
                 checkIfDone();        // the clue might have just completed the word
                 return;
             }
-        }
-    }//GEN-LAST:event_btnCluebtnLetter1ActionPerformed
-
-    private void btnReturntoThemesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturntoThemesActionPerformed
-        new ThemeWindow().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnReturntoThemesActionPerformed
+        }         
+    }//GEN-LAST:event_btnClue1btnLetter1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -508,7 +524,7 @@ public class GameWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClue;
+    private javax.swing.JButton btnClue1;
     private javax.swing.JButton btnLetter1;
     private javax.swing.JButton btnLetter10;
     private javax.swing.JButton btnLetter11;
@@ -523,6 +539,7 @@ public class GameWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnLetter9;
     private javax.swing.JPanel btnPanel;
     private javax.swing.JButton btnReturntoThemes;
+    private javax.swing.JButton btnShuffle;
     private javax.swing.JButton btnSlot1;
     private javax.swing.JButton btnSlot10;
     private javax.swing.JButton btnSlot2;

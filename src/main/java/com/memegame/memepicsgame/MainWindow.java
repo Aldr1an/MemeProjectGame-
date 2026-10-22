@@ -81,7 +81,7 @@ public class MainWindow extends javax.swing.JFrame {
     //mainMenubtn
     //Button for going into the Continue/NewGame logic
     private void btnContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueActionPerformed
-        new GameWindow(GameData.THEMES.get(0), false).setVisible(true);
+        new GameWindow(GameData.THEMES.get(0), true).setVisible(true);
         this.dispose();
         
     }//GEN-LAST:event_btnContinueActionPerformed
