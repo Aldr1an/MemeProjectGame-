@@ -1,0 +1,5 @@
+/memes/precovid/meme01
+/memes/precovid/meme02
+/memes/precovid/meme03
+/memes/precovid/meme04
+/memes/precovid/meme05
