@@ -1,0 +1,11 @@
+/memes/postcovid/meme01
+/memes/postcovid/meme02
+/memes/postcovid/meme03
+/memes/postcovid/meme04
+/memes/postcovid/meme05
+/memes/covid/meme01
+/memes/precovid/meme01
+/memes/precovid/meme02
+/memes/precovid/meme03
+/memes/precovid/meme04
+/memes/precovid/meme05

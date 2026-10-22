@@ -33,7 +33,16 @@ public class Meme {
     }
     public String getRevealPath() {
         String first = picPaths[0];
-        return first.substring(0, first.lastIndexOf('/')) + "/answer.png";
+        String address = first.substring(0, first.lastIndexOf('/'));
+        String pngPath = address + "/answer.png";
+        String gifPath = address + "/answer.gif";
+        if (getClass().getResource(pngPath) != null){
+            return pngPath;
+        }
+        if(getClass().getResource(gifPath) != null){
+            return gifPath;
+        }
+        return null;
     }
     public String getId(){
         String first = picPaths[0];

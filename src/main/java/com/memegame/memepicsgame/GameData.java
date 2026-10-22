@@ -13,6 +13,7 @@ public class GameData {
        postcovid.addMeme(makeMeme("postcovid", "meme02", "CLOWNS!", "This Gov is Circus"));
        postcovid.addMeme(makeMeme("postcovid", "meme03", "BOY DILLA", "Tradionalized Harrasment"));
        postcovid.addMeme(makeMeme("postcovid", "meme04", "ALICE  GUO", "Send Alice Guo Baddie pics"));
+       postcovid.addMeme(makeMeme("postcovid", "meme05", "JB SUAREZ", "HAHAHAH DI KO ALAM SASABHIN LT"));
        //Covid
        covid.addMeme(makeMeme("covid", "meme01", "AH SARADO?", "Bili sana ako eh..."));
        //Precovid
