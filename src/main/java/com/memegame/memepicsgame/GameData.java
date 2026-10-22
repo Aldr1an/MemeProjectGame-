@@ -9,18 +9,18 @@ public class GameData {
        Theme covid     = new Theme("covid", 0);
        Theme precovid  = new Theme("precovid", 0);
        //postCovid
-       postcovid.addMeme(makeMeme("postcovid", "meme01", "bobet", "Mr.MVP himself"));
-       postcovid.addMeme(makeMeme("postcovid", "meme02", "clowns", "This Gov is Circus"));
-       postcovid.addMeme(makeMeme("postcovid", "meme03", "boydila", "Tradionalized Harrasment"));
-       postcovid.addMeme(makeMeme("postcovid", "meme04", "aliceguo", "Send Alice Guo Baddie pics"));
+       postcovid.addMeme(makeMeme("postcovid", "meme01", "BOBET", "Mr.MVP himself"));
+       postcovid.addMeme(makeMeme("postcovid", "meme02", "CLOWNS!", "This Gov is Circus"));
+       postcovid.addMeme(makeMeme("postcovid", "meme03", "BOY DILLA", "Tradionalized Harrasment"));
+       postcovid.addMeme(makeMeme("postcovid", "meme04", "ALICE  GUO", "Send Alice Guo Baddie pics"));
        //Covid
-       covid.addMeme(makeMeme("covid", "meme01", "sarado", "Bili sana ako eh..."));
+       covid.addMeme(makeMeme("covid", "meme01", "AH SARADO?", "Bili sana ako eh..."));
        //Precovid
-       precovid.addMeme(makeMeme("precovid", "meme01", "bulalord", "Yung sinusupsop!"));
-       precovid.addMeme(makeMeme("precovid", "meme02", "jonathan", "Dunk it!"));
-       precovid.addMeme(makeMeme("precovid", "meme03", "dota", "Comshop Classic"));
-       precovid.addMeme(makeMeme("precovid", "meme04", "finish na", "WALA NA!"));
-       precovid.addMeme(makeMeme("precovid", "meme05", "TABEMAINET", "HARANG HARANG KA PA DYAN!"));
+       precovid.addMeme(makeMeme("precovid", "meme01", "BULALORD", "Yung sinusupsop!"));
+       precovid.addMeme(makeMeme("precovid", "meme02", "JONATHAN", "Dunk it!"));
+       precovid.addMeme(makeMeme("precovid", "meme03", "DOTA", "Anong pipiliin mo?!"));
+       precovid.addMeme(makeMeme("precovid", "meme04", "FINISH NA", "WALA NA!"));
+       precovid.addMeme(makeMeme("precovid", "meme05", "TABE MAINET", "HARANG HARANG KA PA DYAN!"));
        
       
        THEMES.add(postcovid);

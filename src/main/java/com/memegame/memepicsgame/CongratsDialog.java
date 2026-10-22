@@ -17,7 +17,7 @@ public class CongratsDialog extends javax.swing.JDialog {
 
     public void setMeme(Meme m) {
         lblMemePic.setIcon(new javax.swing.ImageIcon(getClass().getResource(m.getRevealPath())));
-        lblAnswer.setText("Yep,  "+m.getAnswer());
+        lblAnswer.setText(m.captureAnswerOrig());
         lblAnswerDialg.setText(m.getAnswerDialg());
     }
     
