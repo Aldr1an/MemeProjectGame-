@@ -14,6 +14,17 @@ public class GameData {
        postcovid.addMeme(makeMeme("postcovid", "meme03", "BOY DILLA", "Tradionalized Harrasment"));
        postcovid.addMeme(makeMeme("postcovid", "meme04", "ALICE  GUO", "Send Alice Guo Baddie pics"));
        postcovid.addMeme(makeMeme("postcovid", "meme05", "JB SUAREZ", "HAHAHAH DI KO ALAM SASABHIN LT"));
+       postcovid.addMeme(makeMeme("postcovid", "meme06", "BILISAN MO!", "BILISAN MO!!!!!!!!!!!"));
+       postcovid.addMeme(makeMeme("postcovid", "meme07", "DiWATA", "DUMARAMI NA-"));
+       postcovid.addMeme(makeMeme("postcovid", "meme08", "BURST FADE?", "BURSTFADE YAN YAH? - BURSTFADE YAN"));
+       postcovid.addMeme(makeMeme("postcovid", "meme09", "TITIKMAN", "ALJUR ALVARES?"));
+       postcovid.addMeme(makeMeme("postcovid", "meme10", "ALDEN", "IDK I don't watch tv man"));
+       postcovid.addMeme(makeMeme("postcovid", "meme11", "ESMERINGHOY", "Esmeringhoy muna bago mag hiwalay"));
+       postcovid.addMeme(makeMeme("postcovid", "meme12", "SENATE RUN", "RUN LIKE THE WIND BATO!"));
+       postcovid.addMeme(makeMeme("postcovid", "meme13", "WALA HELMET", "MALI MO PARE!"));
+       postcovid.addMeme(makeMeme("postcovid", "meme14", "NENENG B", "MAAAA? ANO ULAM?"));
+       postcovid.addMeme(makeMeme("postcovid", "meme15", "SOPHIEPRIME", "YOOHOO, DITO ANG TINGIN"));
+       
        //Covid
        covid.addMeme(makeMeme("covid", "meme01", "AH SARADO?", "Bili sana ako eh..."));
        //Precovid

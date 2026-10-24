@@ -6,15 +6,14 @@ public class Meme {
     public static final int MAX_LETTERS = 11;
     private boolean solved = false;
     public Meme(String answer, String theme, String[] picPaths, String ansDialg){
-
-        if (answer.length() < 3 || answer.length() > MAX_LETTERS) {
-            throw new IllegalArgumentException("Answer must be 3 to " + MAX_LETTERS + " letters: " + answer);
-        }
         this.ansDialg = ansDialg;
         this.answerOrig = answer;
         this.answer = answer.replaceAll("[!?\\s]+", "");
         this.theme = theme;
         this.picPaths = picPaths;
+    if (answer.length() < 3 || answer.length() > MAX_LETTERS) {
+            throw new IllegalArgumentException("Answer must be 3 to " + MAX_LETTERS + " letters: " + answer);
+        }
     }
     public String captureAnswerOrig(){ return answerOrig;}
     public String getAnswer() { return answer; }
@@ -42,9 +41,6 @@ public class Meme {
         }
         if(getClass().getResource(gifPath) != null){
             return gifPath;
-        }
-        if(getClass().getResource(vidPath) != null){
-            return vidPath;
         }
         return null;
     }

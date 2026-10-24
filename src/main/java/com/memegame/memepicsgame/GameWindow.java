@@ -59,9 +59,9 @@ public class GameWindow extends javax.swing.JFrame {
         //setting the window to the middle of screen.
         setLocationRelativeTo(null);
         letterButtons = new JButton[]{btnLetter1, btnLetter2, btnLetter3, btnLetter4, btnLetter5, btnLetter6,
-            btnLetter7, btnLetter8, btnLetter9, btnLetter10, btnLetter11, btnLetter12};
+            btnLetter7, btnLetter8, btnLetter9, btnLetter10, btnLetter11};
         slotButtons = new JButton[]{btnSlot1, btnSlot2, btnSlot3, btnSlot4, btnSlot5, btnSlot6, btnSlot7,
-            btnSlot8, btnSlot9, btnSlot10};
+            btnSlot8, btnSlot9, btnSlot10, btnSlot11};
         lblCredits.setText("Clues: " + clueCredits);
         slotSource = new int[slotButtons.length];
         showMeme(pickNext());
@@ -178,6 +178,7 @@ public class GameWindow extends javax.swing.JFrame {
         btnSlot8 = new javax.swing.JButton();
         btnSlot9 = new javax.swing.JButton();
         btnSlot10 = new javax.swing.JButton();
+        btnSlot11 = new javax.swing.JButton();
         btnClue = new javax.swing.JButton();
         lblCredits = new javax.swing.JLabel();
         btnPanel = new javax.swing.JPanel();
@@ -250,6 +251,10 @@ public class GameWindow extends javax.swing.JFrame {
         btnSlot10.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot10.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot10);
+
+        btnSlot11.setPreferredSize(new java.awt.Dimension(40, 40));
+        btnSlot11.addActionListener(this::btnSlot11ActionPerformed);
+        btnSlotPanel.add(btnSlot11);
 
         btnClue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnClue.setText("Clue");
@@ -485,6 +490,10 @@ public class GameWindow extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnReturntoThemesActionPerformed
 
+    private void btnSlot11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSlot11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSlot11ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -525,6 +534,7 @@ public class GameWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnReturntoThemes;
     private javax.swing.JButton btnSlot1;
     private javax.swing.JButton btnSlot10;
+    private javax.swing.JButton btnSlot11;
     private javax.swing.JButton btnSlot2;
     private javax.swing.JButton btnSlot3;
     private javax.swing.JButton btnSlot4;
