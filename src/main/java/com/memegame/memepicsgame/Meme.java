@@ -35,7 +35,6 @@ public class Meme {
         String address = first.substring(0, first.lastIndexOf('/'));
         String pngPath = address + "/answer.png";
         String gifPath = address + "/answer.gif";
-        String vidPath = address + "/answer.mp4";
         if (getClass().getResource(pngPath) != null){
             return pngPath;
         }

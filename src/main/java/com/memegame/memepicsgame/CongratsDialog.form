@@ -25,23 +25,27 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnMenu" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnNext" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="107" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="lblAnswerDialg" alignment="2" min="-2" pref="350" max="-2" attributes="0"/>
-                  <Component id="btnTheme" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAnswer" alignment="2" min="-2" pref="350" max="-2" attributes="0"/>
-                  <Component id="lblMemePic" alignment="2" min="-2" pref="200" max="-2" attributes="0"/>
-                  <Component id="lblCongrats" alignment="2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnMenu" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnNext" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="101" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="btnTheme" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAnswer" alignment="2" min="-2" pref="350" max="-2" attributes="0"/>
+                          <Component id="lblMemePic" alignment="2" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="lblCongrats" alignment="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lblAnswerDialg" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,9 +70,9 @@
                   </Group>
               </Group>
               <Component id="lblAnswer" min="-2" pref="45" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="lblAnswerDialg" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblAnswerDialg" min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="btnTheme" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
@@ -121,7 +125,7 @@
     <Component class="javax.swing.JLabel" name="lblAnswerDialg">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="3"/>
+          <Font name="Segoe UI" size="24" style="3"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="LBLCREDEEEEEEETS"/>

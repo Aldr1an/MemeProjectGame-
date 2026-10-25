@@ -24,6 +24,7 @@ public class ThemeWindow extends javax.swing.JFrame {
         boolean replay = t.getSolvedCount() == t.getMemes().size();
         if (replay) {
             javax.swing.JOptionPane.showMessageDialog(this, "Theme complete play it again from the start.");
+        
         }
         new GameWindow(t, replay).setVisible(true);
         dispose();
@@ -121,7 +122,9 @@ public class ThemeWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnPostcovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostcovidActionPerformed
+        
         openTheme(0);
+        
     }//GEN-LAST:event_btnPostcovidActionPerformed
 
     private void btnCovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCovidActionPerformed

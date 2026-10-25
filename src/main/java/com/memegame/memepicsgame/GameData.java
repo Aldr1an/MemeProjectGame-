@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class GameData {
     public static final ArrayList<Theme> THEMES = new ArrayList<>();
+    public static int currentTheme = 0;
     static {
        Theme postcovid = new Theme("postcovid", 0);
        Theme covid     = new Theme("covid", 0);
@@ -11,7 +12,7 @@ public class GameData {
        //postCovid
        postcovid.addMeme(makeMeme("postcovid", "meme01", "BOBET", "Mr.MVP himself"));
        postcovid.addMeme(makeMeme("postcovid", "meme02", "CLOWNS!", "This Gov is Circus"));
-       postcovid.addMeme(makeMeme("postcovid", "meme03", "BOY DILLA", "Tradionalized Harrasment"));
+       postcovid.addMeme(makeMeme("postcovid", "meme03", "BOY DILA", "Tradionalized Harrasment"));
        postcovid.addMeme(makeMeme("postcovid", "meme04", "ALICE  GUO", "Send Alice Guo Baddie pics"));
        postcovid.addMeme(makeMeme("postcovid", "meme05", "JB SUAREZ", "HAHAHAH DI KO ALAM SASABHIN LT"));
        postcovid.addMeme(makeMeme("postcovid", "meme06", "BILISAN MO!", "BILISAN MO!!!!!!!!!!!"));

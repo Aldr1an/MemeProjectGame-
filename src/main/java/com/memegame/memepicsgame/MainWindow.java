@@ -81,9 +81,14 @@ public class MainWindow extends javax.swing.JFrame {
     //mainMenubtn
     //Button for going into the Continue/NewGame logic
     private void btnContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueActionPerformed
-        new GameWindow(GameData.THEMES.get(0), false).setVisible(true);
+        int i = GameData.currentTheme;
+        if (i < 0 || i >= GameData.THEMES.size() || !GameData.isUnlocked(i)) {
+            i = 0;                               
+        }
+        Theme t = GameData.THEMES.get(i);
+        boolean replay = t.getSolvedCount() == t.getMemes().size();
+        new GameWindow(t, replay).setVisible(true);
         this.dispose();
-        
     }//GEN-LAST:event_btnContinueActionPerformed
       
     private void btnThemeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemeActionPerformed

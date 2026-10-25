@@ -50,6 +50,8 @@ public class GameWindow extends javax.swing.JFrame {
     public GameWindow(Theme theme, boolean replay) {
         initComponents();
         this.theme = theme;
+        GameData.currentTheme = GameData.THEMES.indexOf(theme);
+        SaveManager.save();
         this.replay = replay;
         if (replay){
             pool = new ArrayList<>(theme.getMemes());
@@ -136,7 +138,7 @@ public class GameWindow extends javax.swing.JFrame {
                 new ThemeWindow().setVisible(true);
                 dispose();
             } else {
-                Meme next = theme.getRandomUnsolved();
+                Meme next = pickNext();
                 if(next != null){
                     showMeme(next);
                 } else {
