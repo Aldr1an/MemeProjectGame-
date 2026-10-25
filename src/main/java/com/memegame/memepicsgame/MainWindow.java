@@ -37,7 +37,7 @@ public class MainWindow extends javax.swing.JFrame {
         btnTheme.setText("Select Theme");
         btnTheme.addActionListener(this::btnThemeActionPerformed);
 
-        btnMechanics.setText("Mechanics");
+        btnMechanics.setText("Mechanics / Credits");
         btnMechanics.addActionListener(this::btnMechanicsActionPerformed);
 
         btnClose.setText("Close Game");
@@ -97,7 +97,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnThemeActionPerformed
 
     private void btnMechanicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMechanicsActionPerformed
-        // TODO add your handling code here:
+        new MechanicsDialogue(this, true).setVisible(true);
     }//GEN-LAST:event_btnMechanicsActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
