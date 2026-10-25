@@ -37,6 +37,11 @@ public class GameData {
        covid.addMeme(makeMeme("covid", "meme08", "GET DAT 30", "\"COME ON PATCH!\""));
        covid.addMeme(makeMeme("covid", "meme09", "MIKEY E", "\"HAHAHAHAHAHAHHA\""));
        covid.addMeme(makeMeme("covid", "meme10", "COVID MASCOT", "NU YAN? HAHAHAHAHHA"));
+       covid.addMeme(makeMeme("covid", "meme11", "TYRONE TIAGA", "Yan nanaman..."));
+       covid.addMeme(makeMeme("covid", "meme12", "TROPA TIME", "HAHAHAHAHAHAH"));
+       covid.addMeme(makeMeme("covid", "meme13", "WALASCROLAN", "PANOORIN NYO KAME!"));
+       covid.addMeme(makeMeme("covid", "meme14", "NORMALIN", "\"UY UY UY? ANO YUN?\""));
+       covid.addMeme(makeMeme("covid", "meme15", "KIM CHU", "\"AY PWEDE NA PALA LUMABAS\""));
        //Precovid
        precovid.addMeme(makeMeme("precovid", "meme01", "BULALORD", "Yung sinusupsop!"));
        precovid.addMeme(makeMeme("precovid", "meme02", "JONATHAN", "Dunk it!"));
