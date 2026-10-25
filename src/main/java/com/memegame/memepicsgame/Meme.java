@@ -11,7 +11,7 @@ public class Meme {
         this.answer = answer.replaceAll("[!?\\s]+", "");
         this.theme = theme;
         this.picPaths = picPaths;
-    if (answer.length() < 3 || answer.length() > MAX_LETTERS) {
+    if (this.answer.length() < 3 || this.answer.length() > MAX_LETTERS) {
             throw new IllegalArgumentException("Answer must be 3 to " + MAX_LETTERS + " letters: " + answer);
         }
     }
@@ -34,9 +34,13 @@ public class Meme {
         String first = picPaths[0];
         String address = first.substring(0, first.lastIndexOf('/'));
         String pngPath = address + "/answer.png";
+        String jpgPath = address + "/answer.jpg";
         String gifPath = address + "/answer.gif";
         if (getClass().getResource(pngPath) != null){
             return pngPath;
+        }
+        if (getClass().getResource(jpgPath) != null){
+            return jpgPath;
         }
         if(getClass().getResource(gifPath) != null){
             return gifPath;

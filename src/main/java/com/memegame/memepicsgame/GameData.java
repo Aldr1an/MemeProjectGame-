@@ -24,10 +24,19 @@ public class GameData {
        postcovid.addMeme(makeMeme("postcovid", "meme12", "SENATE RUN", "RUN LIKE THE WIND BATO!"));
        postcovid.addMeme(makeMeme("postcovid", "meme13", "WALA HELMET", "MALI MO PARE!"));
        postcovid.addMeme(makeMeme("postcovid", "meme14", "NENENG B", "MAAAA? ANO ULAM?"));
-       postcovid.addMeme(makeMeme("postcovid", "meme15", "SOPHIEPRIME", "YOOHOO, DITO ANG TINGIN"));
+       postcovid.addMeme(makeMeme("postcovid", "meme15", "SOPHIE PRIME", "YOOHOO, DITO ANG TINGIN"));
        
        //Covid
        covid.addMeme(makeMeme("covid", "meme01", "AH SARADO?", "Bili sana ako eh..."));
+       covid.addMeme(makeMeme("covid", "meme02", "AKOSIRIZAL", "\"AKO ANG NAMATAY SAINYO!\""));
+       covid.addMeme(makeMeme("covid", "meme03", "ALLEN KALBO", "\"SINO YUNG NAG A-ALEN KALBO?\""));
+       covid.addMeme(makeMeme("covid", "meme04", "CALOOCAN BOY", "EH PAANO KUNG..."));
+       covid.addMeme(makeMeme("covid", "meme05", "OTLUM", "Ang depinisyon ng magnanakaw"));
+       covid.addMeme(makeMeme("covid", "meme06", "MASON AKO!", "\"OH?! SIGEEEEEE\""));
+       covid.addMeme(makeMeme("covid", "meme07", "BUUNJA", "\"ANO'NG PARTE NG KATAWAN...\""));
+       covid.addMeme(makeMeme("covid", "meme08", "GET DAT 30", "\"COME ON PATCH!\""));
+       covid.addMeme(makeMeme("covid", "meme09", "MIKEY E", "\"HAHAHAHAHAHAHHA\""));
+       covid.addMeme(makeMeme("covid", "meme10", "COVID MASCOT", "NU YAN? HAHAHAHAHHA"));
        //Precovid
        precovid.addMeme(makeMeme("precovid", "meme01", "BULALORD", "Yung sinusupsop!"));
        precovid.addMeme(makeMeme("precovid", "meme02", "JONATHAN", "Dunk it!"));
@@ -43,11 +52,29 @@ public class GameData {
     public static Meme makeMeme(String theme, String memenum, String answer, String ansDialg){
         String base = "/memes/" + theme + "/" + memenum + "/";
         return new Meme(answer, theme, new String[]{
-            base + "1.png", base + "2.png", base + "3.png", base + "4.png"}, ansDialg);
+                        findImage(base, "1"),
+                        findImage(base, "2"),
+                        findImage(base, "3"),
+                        findImage(base, "4")}, ansDialg);
     }
     
     public static boolean isUnlocked(int themeIndex) {
         if (themeIndex == 0) return true;
         return THEMES.get(themeIndex -1).isNextUnlocked();
+    }
+    public static String findImage(String base, String num) {
+        String png = base + num + ".png";
+        String jpg = base + num + ".jpg";
+    if (Meme.class.getResource(png) != null) {
+        return png;
+    }
+
+    if (Meme.class.getResource(jpg) != null) {
+        return jpg;
+    }
+
+    throw new IllegalArgumentException(
+        "Image not found: " + png + " or " + jpg
+    );
     }
 }
