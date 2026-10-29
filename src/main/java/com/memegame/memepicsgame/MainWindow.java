@@ -5,9 +5,12 @@ package com.memegame.memepicsgame;
  * Continue / New Game, Select Theme, Mechanics / Credits, and Close Game.
  * It's also where the game starts (see {@link #main(String[])}).
  */
-public class MainWindow extends javax.swing.JFrame {
-    
-    
+public class MainWindow extends BaseWindow {
+    //HEHE METHOD OVERRIDING SUR 
+    @Override 
+    protected void goBack(){
+        System.exit(0);
+    }
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainWindow.class.getName());
 
     /**
@@ -93,21 +96,19 @@ public class MainWindow extends javax.swing.JFrame {
      * @param evt the button click event
      */
     private void btnContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueActionPerformed
-        int i = GameData.currentTheme;
+        int i = GameData.getCurrentTheme();
         // Fall back to the first theme if the saved one is invalid or locked
-        if (i < 0 || i >= GameData.THEMES.size() || !GameData.isUnlocked(i)) {
+        if (i < 0 || i >= GameData.getThemeCount() || !GameData.isUnlocked(i)) {
             i = 0;                               
         }
-        Theme t = GameData.THEMES.get(i);
+        Theme t = GameData.getTheme(i);
          // Replay mode when the player already solved every meme in the theme
         boolean replay = t.getSolvedCount() == t.getMemes().size();
-        new GameWindow(t, replay).setVisible(true);
-        this.dispose();
+        goTo(new GameWindow(t, replay));
     }//GEN-LAST:event_btnContinueActionPerformed
     // Select Theme button. Opens the theme selection screen
     private void btnThemeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemeActionPerformed
-        new ThemeWindow().setVisible(true);
-        this.dispose();
+        goTo(new ThemeWindow());
     }//GEN-LAST:event_btnThemeActionPerformed
     // Mechanics / Credits button. Opens the how-to-play pop-up on top of
     private void btnMechanicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMechanicsActionPerformed
@@ -115,7 +116,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMechanicsActionPerformed
     //Close Game button. Quits the whole program.
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        System.exit(0);
+        goBack();
     }//GEN-LAST:event_btnCloseActionPerformed
 
     /**

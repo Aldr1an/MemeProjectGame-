@@ -9,7 +9,12 @@ import javax.swing.JProgressBar;
  * that theme is solved. A theme's button is only clickable once the theme
  * before it has been completed. A Back button returns to the main menu.
  */
-public class ThemeWindow extends javax.swing.JFrame {
+public class ThemeWindow extends BaseWindow {
+        @Override
+        protected void goBack(){
+            new MainWindow().setVisible(true);
+            this.dispose();
+        }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ThemeWindow.class.getName());
     
@@ -29,8 +34,8 @@ public class ThemeWindow extends javax.swing.JFrame {
         JButton[] themeButtons = {btnPostcovid, btnCovid, btnPrecovid};
         JProgressBar[] bars = {pbPostcovid, pbCovid, pbPrecovid};
         
-        for (int i = 0; i < GameData.THEMES.size(); i++) {
-            Theme t = GameData.THEMES.get(i);
+        for (int i = 0; i < GameData.getThemeCount(); i++) {
+            Theme t = GameData.getTheme(i);
             bars[i].setValue(t.getProgressPercent());
             themeButtons[i].setEnabled(GameData.isUnlocked(i));
         }
@@ -44,14 +49,13 @@ public class ThemeWindow extends javax.swing.JFrame {
      *          (0 = Post Covid, 1 = Covid, 2 = Pre Covid)
      */
     private void openTheme(int i){
-        Theme t = GameData.THEMES.get(i);
+        Theme t = GameData.getTheme(i);
         boolean replay = t.getSolvedCount() == t.getMemes().size();
         if (replay) {
             javax.swing.JOptionPane.showMessageDialog(this, "Theme complete play it again from the start.");
         
         }
-        new GameWindow(t, replay).setVisible(true);
-        dispose();
+        goTo(new GameWindow(t, replay));
     }
     
     @SuppressWarnings("unchecked")
@@ -141,8 +145,7 @@ public class ThemeWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     // To go back to the Main Window
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        new MainWindow().setVisible(true);
-        this.dispose();
+        goBack();
     }//GEN-LAST:event_btnBackActionPerformed
     // Open POST Covid Theme :)
     private void btnPostcovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostcovidActionPerformed

@@ -28,8 +28,8 @@ public class SaveManager {
      */
     public static void save() {
         List<String> lines = new ArrayList<>();
-        lines.add("current=" + GameData.currentTheme);
-        for (Theme t : GameData.THEMES) {
+        lines.add("current=" + GameData.getCurrentTheme());
+        for (Theme t : GameData.getThemes()) {
             for (Meme m : t.getMemes()) {
                 if (m.isSolved()) {
                     lines.add(m.getId());
@@ -62,10 +62,10 @@ public class SaveManager {
             List<String> lines = Files.readAllLines(FILE);
             for (String line : lines) {
                 if (line.startsWith("current=")) {
-                    GameData.currentTheme = Integer.parseInt(line.substring(8));
+                    GameData.setCurrentTheme(Integer.parseInt(line.substring(8)));
                 }
             }
-            for (Theme t : GameData.THEMES) {
+            for (Theme t : GameData.getThemes()) {
                 for (Meme m : t.getMemes()) {
                     if (lines.contains(m.getId())) {
                         m.markSolved();

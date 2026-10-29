@@ -19,7 +19,7 @@ import javax.swing.JLabel;
  *
  * @author Ade
  */
-public class GameWindow extends javax.swing.JFrame {
+public class GameWindow extends BaseWindow {
     // True when replaying a theme that's already fully solved.
     private boolean replay;
     //In replay mode, the shuffled memes that haven't been shown yet. Not used otherwise.
@@ -40,7 +40,11 @@ public class GameWindow extends javax.swing.JFrame {
     //The theme being played
     private Theme theme;
     
-    
+    @Override
+    protected void goBack(){
+        new ThemeWindow().setVisible(true);
+        this.dispose();
+    }
     /**
     * Puts a meme on screen: remembers it as the current one, builds the
     * letter tiles and slots for its answer, and loads its four clue pictures.
@@ -75,7 +79,7 @@ public class GameWindow extends javax.swing.JFrame {
     public GameWindow(Theme theme, boolean replay) {
         initComponents();
         this.theme = theme;
-        GameData.currentTheme = GameData.THEMES.indexOf(theme);
+        GameData.setCurrentTheme(GameData.indexOfTheme(theme));
         SaveManager.save();
         this.replay = replay;
         if (replay){
@@ -566,8 +570,7 @@ public class GameWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCluebtnLetter1ActionPerformed
     // just going back to themes :/
     private void btnReturntoThemesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturntoThemesActionPerformed
-        new ThemeWindow().setVisible(true);
-        this.dispose();
+        goBack();
     }//GEN-LAST:event_btnReturntoThemesActionPerformed
     
     private void btnSlot11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSlot11ActionPerformed
@@ -593,7 +596,7 @@ public class GameWindow extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GameWindow(GameData.THEMES.get(0), false).setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new GameWindow(GameData.getTheme(0), false).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

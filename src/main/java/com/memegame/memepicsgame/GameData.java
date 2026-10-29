@@ -1,19 +1,22 @@
 package com.memegame.memepicsgame;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 
 /**
  * The game's data hub. It builds every theme and its memes once when the
  * game starts, and keeps them in one place so any screen can use them.
  * Also has helpers for building memes and checking which themes are unlocked.
  */
-public class GameData {
+public class GameData{
     
     /** Every theme in the game, in play order: postcovid, covid, then precovid. */    
-    public static final ArrayList<Theme> THEMES = new ArrayList<>();
+    private static final ArrayList<Theme> THEMES = new ArrayList<>();
     
      /** Index (in {@link #THEMES}) of the theme the player is currently on. */
-    public static int currentTheme = 0;
+    private static int currentTheme = 0;
     
     // Static block: runs once, automatically, the first time GameData is used.
     // It creates the three themes, fills each with its 15 memes As AGREED UPON WITH THE BOYS  then adds
@@ -77,6 +80,22 @@ public class GameData {
        THEMES.add(covid);
        THEMES.add(precovid);
     }
+
+    
+    //GETTERS AND SETTERS :)
+    public static int getCurrentTheme(){
+        return currentTheme;
+    }
+    public static void setCurrentTheme(int index){
+         currentTheme = index;
+    }
+    
+    public static Theme getTheme(int index) { return THEMES.get(index); } 
+    public static int getThemeCount() { return THEMES.size(); }
+    public static int indexOfTheme(Theme t) { return THEMES.indexOf(t); }
+    public static List<Theme> getThemes() {
+    return Collections.unmodifiableList(THEMES);
+}
     
      /**
      * Builds one meme from its folder. The four clue pictures are found
@@ -94,10 +113,10 @@ public class GameData {
     public static Meme makeMeme(String theme, String memenum, String answer, String ansDialg){
         String base = "/memes/" + theme + "/" + memenum + "/";
         return new Meme(answer, theme, new String[]{
-                        findImage(base, "1"),
-                        findImage(base, "2"),
-                        findImage(base, "3"),
-                        findImage(base, "4")}, ansDialg);
+                        getRevealPath(base, "1"),
+                        getRevealPath(base, "2"),
+                        getRevealPath(base, "3"),
+                        getRevealPath(base, "4")}, ansDialg);
     }
     /**
      * Tells whether the player is allowed to open a theme. The first theme
@@ -122,7 +141,8 @@ public class GameData {
      * @return the resource path of the picture that was found
      * @throws IllegalArgumentException if none of the three file types exists
      */
-    public static String findImage(String base, String num) {
+
+    public static String getRevealPath(String base, String num) {
         String png = base + num + ".png";
         String jpg = base + num + ".jpg";
         String gif = base + num + ".gif";

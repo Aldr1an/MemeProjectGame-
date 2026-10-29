@@ -6,7 +6,7 @@ package com.memegame.memepicsgame;
  * 
  * It should remember if the the player has solved it yet.
  */
-public class Meme {
+public class Meme implements ResourceGetters{
 
     /** The most letters an answer can have (spaces and punctuation don't count). */
     public static final int MAX_LETTERS = 11;
@@ -41,6 +41,15 @@ public class Meme {
      * @throws IllegalArgumentException if the cleaned-up answer is shorter
      *         than 3 letters or longer than {@link #MAX_LETTERS}
      */
+    public Meme(){
+        this("No-answer", "No-Theme", null, "EmptyDialg");
+    }
+    public Meme(String answer, String theme, String ansDialg){
+        this.answer = answer;
+        this.answerOrig = ansDialg;
+        this.theme = theme;
+        this.picPaths = null;
+    }
     public Meme(String answer, String theme, String[] picPaths, String ansDialg) {
         this.ansDialg = ansDialg;
         this.answerOrig = answer;
@@ -104,6 +113,7 @@ public class Meme {
      * @return the resource path of the reveal picture, or null if the
      *         folder has no answer picture
      */
+    @Override
     public String getRevealPath() {
         String first = picPaths[0];
         String address = first.substring(0, first.lastIndexOf('/'));
@@ -139,4 +149,8 @@ public class Meme {
      * restoring saved progress.
      */
     public void markSolved() { solved = true; }
+    @Override
+    public String toString(){
+        return "Meme: "+answerOrig+"\nID: "+getId();
+    }
 }
