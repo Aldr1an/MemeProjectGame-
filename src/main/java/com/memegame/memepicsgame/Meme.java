@@ -8,7 +8,7 @@ public class Meme {
     public Meme(String answer, String theme, String[] picPaths, String ansDialg){
         this.ansDialg = ansDialg;
         this.answerOrig = answer;
-        this.answer = answer.replaceAll("[!?\\s]+", "");
+        this.answer = answer.replaceAll("[,!?\\s]+", "");
         this.theme = theme;
         this.picPaths = picPaths;
     if (this.answer.length() < 3 || this.answer.length() > MAX_LETTERS) {

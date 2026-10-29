@@ -35,21 +35,31 @@ public class GameData {
        covid.addMeme(makeMeme("covid", "meme06", "MASON AKO!", "\"OH?! SIGEEEEEE\""));
        covid.addMeme(makeMeme("covid", "meme07", "BUUNJA", "\"ANO'NG PARTE NG KATAWAN...\""));
        covid.addMeme(makeMeme("covid", "meme08", "GET DAT 30", "\"COME ON PATCH!\""));
-       covid.addMeme(makeMeme("covid", "meme09", "MIKEY E", "\"HAHAHAHAHAHAHHA\""));
-       covid.addMeme(makeMeme("covid", "meme10", "COVID MASCOT", "NU YAN? HAHAHAHAHHA"));
+       covid.addMeme(makeMeme("covid", "meme09", "MIKEY E", "\"ANG SARAP MO PIA\""));
+       covid.addMeme(makeMeme("covid", "meme10", "COVID MASCOT", "NU YAN?"));
        covid.addMeme(makeMeme("covid", "meme11", "TYRONE TIAGA", "Yan nanaman..."));
-       covid.addMeme(makeMeme("covid", "meme12", "TROPA TIME", "HAHAHAHAHAHAH"));
+       covid.addMeme(makeMeme("covid", "meme12", "TROPA TIME", "DARWIN AND PIPOY TROPATIME"));
        covid.addMeme(makeMeme("covid", "meme13", "WALASCROLAN", "PANOORIN NYO KAME!"));
        covid.addMeme(makeMeme("covid", "meme14", "NORMALIN", "\"UY UY UY? ANO YUN?\""));
        covid.addMeme(makeMeme("covid", "meme15", "KIM CHU", "\"AY PWEDE NA PALA LUMABAS\""));
+       
        //Precovid
        precovid.addMeme(makeMeme("precovid", "meme01", "BULALORD", "Yung sinusupsop!"));
        precovid.addMeme(makeMeme("precovid", "meme02", "JONATHAN", "Dunk it!"));
        precovid.addMeme(makeMeme("precovid", "meme03", "DOTA", "Anong pipiliin mo?!"));
        precovid.addMeme(makeMeme("precovid", "meme04", "FINISH NA", "WALA NA!"));
-       precovid.addMeme(makeMeme("precovid", "meme05", "TABE MAINET", "HARANG HARANG KA PA DYAN!"));
+       precovid.addMeme(makeMeme("precovid", "meme05", "TABE MAINET", "\"HARANG HARANG KA PA DYAN!\""));
+       precovid.addMeme(makeMeme("precovid", "meme06", "NA STUCK", "ARAY KOH"));
+       precovid.addMeme(makeMeme("precovid", "meme07", "ALING VICKY", "yung anak mo nahulog sa imburnal!!\""));
+       precovid.addMeme(makeMeme("precovid", "meme08", "SEGS!", "Light\n's on? | Light\n's off?"));
+       precovid.addMeme(makeMeme("precovid", "meme09", "GINAGAWA MO?!", "\"AGIK...\""));
+       precovid.addMeme(makeMeme("precovid", "meme10", "TAPOS NA PO", "\"SIR,    TAPOS NA PO :>\""));
+       precovid.addMeme(makeMeme("precovid", "meme11", "LISTEN, LOOK", "YEP IT\'S \"LISTEN, LOOK, LISTEN, LEARN\" "));
+       precovid.addMeme(makeMeme("precovid", "meme12", "TAGURO", "TAPUSIN! TAPUSIN! TAPUSIN!"));
+       precovid.addMeme(makeMeme("precovid", "meme13", "TITO BADANG", "\"DADDY DADDY SI TITO BADANG\""));
+       precovid.addMeme(makeMeme("precovid", "meme14", "STAPH!", "Peak Rapbattle literal chills"));
+       precovid.addMeme(makeMeme("precovid", "meme15", "LAKASAN MO!", "\"WAG MO SIGAWAN PARE\""));
        
-      
        THEMES.add(postcovid);
        THEMES.add(covid);
        THEMES.add(precovid);
@@ -70,16 +80,19 @@ public class GameData {
     public static String findImage(String base, String num) {
         String png = base + num + ".png";
         String jpg = base + num + ".jpg";
-    if (Meme.class.getResource(png) != null) {
-        return png;
-    }
+        String gif = base + num + ".gif";
+        if (Meme.class.getResource(png) != null) {
+            return png;
+        }
 
-    if (Meme.class.getResource(jpg) != null) {
-        return jpg;
-    }
-
+        if (Meme.class.getResource(jpg) != null) {
+            return jpg;
+        }
+        if (Meme.class.getResource(gif) != null){
+            return gif;
+        }
     throw new IllegalArgumentException(
-        "Image not found: " + png + " or " + jpg
+        "Image not found!"
     );
     }
 }
