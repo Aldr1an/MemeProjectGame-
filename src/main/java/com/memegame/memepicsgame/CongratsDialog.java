@@ -7,10 +7,12 @@ public class CongratsDialog extends javax.swing.JDialog {
 
     public String getChoice() { return choice; }
 
-    public void setMeme(Meme m) {
+    public void setMeme(Meme m, Theme t) {
+ 
         lblMemePic.setIcon(new javax.swing.ImageIcon(getClass().getResource(m.getRevealPath())));
         lblAnswer.setText(m.captureAnswerOrig());
         lblAnswerDialg.setText(m.getAnswerDialg());
+        if (t.isNextUnlocked()) lblCongrats.setText("GALING!\n NEXT THEME IS UNLOCKED");
     }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CongratsDialog.class.getName());
@@ -43,6 +45,7 @@ public CongratsDialog(java.awt.Frame parent, boolean modal) {
         setResizable(false);
 
         lblCongrats.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblCongrats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCongrats.setText("GALING!");
 
         lblMemePic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -84,7 +87,7 @@ public CongratsDialog(java.awt.Frame parent, boolean modal) {
                             .addComponent(btnTheme)
                             .addComponent(lblAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblMemePic, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCongrats))
+                            .addComponent(lblCongrats, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(86, 86, 86))
                     .addComponent(lblAnswerDialg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())

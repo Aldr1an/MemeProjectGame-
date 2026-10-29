@@ -1,11 +1,17 @@
 package com.memegame.memepicsgame;
 
+/**
+ * The main menu and the first screen the player sees. It has four buttons:
+ * Continue / New Game, Select Theme, Mechanics / Credits, and Close Game.
+ * It's also where the game starts (see {@link #main(String[])}).
+ */
 public class MainWindow extends javax.swing.JFrame {
+    
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainWindow.class.getName());
 
     /**
-     * Creates new form MainWindow
+     * Builds the menu window and centers it on the screen.
      */
     public MainWindow() {
         initComponents();
@@ -78,28 +84,36 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //mainMenubtn
-    //Button for going into the Continue/NewGame logic
+    /**
+     * Continue / New Game button. Opens the game on the theme the player
+     * was last on. If there's no valid saved theme, or that theme is still
+     * locked, it falls back to the first theme. If every meme in that
+     * theme is already solved, the game opens in replay mode.
+     *
+     * @param evt the button click event
+     */
     private void btnContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueActionPerformed
         int i = GameData.currentTheme;
+        // Fall back to the first theme if the saved one is invalid or locked
         if (i < 0 || i >= GameData.THEMES.size() || !GameData.isUnlocked(i)) {
             i = 0;                               
         }
         Theme t = GameData.THEMES.get(i);
+         // Replay mode when the player already solved every meme in the theme
         boolean replay = t.getSolvedCount() == t.getMemes().size();
         new GameWindow(t, replay).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnContinueActionPerformed
-      
+    // Select Theme button. Opens the theme selection screen
     private void btnThemeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemeActionPerformed
         new ThemeWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnThemeActionPerformed
-
+    // Mechanics / Credits button. Opens the how-to-play pop-up on top of
     private void btnMechanicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMechanicsActionPerformed
         new MechanicsDialogue(this, true).setVisible(true);
     }//GEN-LAST:event_btnMechanicsActionPerformed
-
+    //Close Game button. Quits the whole program.
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnCloseActionPerformed

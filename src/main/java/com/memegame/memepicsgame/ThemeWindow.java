@@ -3,10 +3,26 @@ package com.memegame.memepicsgame;
 import javax.swing.JButton;
 import javax.swing.JProgressBar;
 
+/**
+ * The theme selection screen. It shows one button per theme (Post Covid,
+ * Covid, Pre Covid) with a progress bar under each one showing how much of
+ * that theme is solved. A theme's button is only clickable once the theme
+ * before it has been completed. A Back button returns to the main menu.
+ */
 public class ThemeWindow extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ThemeWindow.class.getName());
-
+    
+    
+    /**
+     * Builds the theme screen. For each theme, it fills in the progress bar
+     * with the percentage solved and greys out the button if the theme is
+     * still locked.
+     * <p>
+     * Note: this is written for exactly three themes. Adding a fourth
+     * theme to {@link GameData#THEMES} also needs a new button and
+     * progress bar added here, or the game will crash.
+     */
     public ThemeWindow() {
         initComponents();
         setLocationRelativeTo(null);
@@ -19,6 +35,14 @@ public class ThemeWindow extends javax.swing.JFrame {
             themeButtons[i].setEnabled(GameData.isUnlocked(i));
         }
     }
+        /**
+     * Opens the game on the chosen theme and closes this screen. If the
+     * theme is already fully solved, a message pops up first and the game
+     * starts in replay mode, so every meme in it can be played again.
+     *
+     * @param i the theme's position in {@link GameData#THEMES}
+     *          (0 = Post Covid, 1 = Covid, 2 = Pre Covid)
+     */
     private void openTheme(int i){
         Theme t = GameData.THEMES.get(i);
         boolean replay = t.getSolvedCount() == t.getMemes().size();
@@ -115,22 +139,22 @@ public class ThemeWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    // To go back to the Main Window
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         new MainWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
-
+    // Open POST Covid Theme :)
     private void btnPostcovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostcovidActionPerformed
         
         openTheme(0);
         
     }//GEN-LAST:event_btnPostcovidActionPerformed
-
+    // Open COVID theme
     private void btnCovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCovidActionPerformed
         openTheme(1);
     }//GEN-LAST:event_btnCovidActionPerformed
-
+    // Open PRE Covid Theme
     private void btnPrecovidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrecovidActionPerformed
         openTheme(2);
     }//GEN-LAST:event_btnPrecovidActionPerformed

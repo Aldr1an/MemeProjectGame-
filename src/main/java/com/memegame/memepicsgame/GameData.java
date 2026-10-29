@@ -2,13 +2,26 @@ package com.memegame.memepicsgame;
 
 import java.util.ArrayList;
 
+/**
+ * The game's data hub. It builds every theme and its memes once when the
+ * game starts, and keeps them in one place so any screen can use them.
+ * Also has helpers for building memes and checking which themes are unlocked.
+ */
 public class GameData {
+    
+    /** Every theme in the game, in play order: postcovid, covid, then precovid. */    
     public static final ArrayList<Theme> THEMES = new ArrayList<>();
+    
+     /** Index (in {@link #THEMES}) of the theme the player is currently on. */
     public static int currentTheme = 0;
+    
+    // Static block: runs once, automatically, the first time GameData is used.
+    // It creates the three themes, fills each with its 15 memes As AGREED UPON WITH THE BOYS  then adds
+    // them to THEMES. To add a new meme, add one more addMeme line here
     static {
-       Theme postcovid = new Theme("postcovid", 0);
-       Theme covid     = new Theme("covid", 0);
-       Theme precovid  = new Theme("precovid", 0);
+       Theme postcovid = new Theme("postcovid", 7);
+       Theme covid     = new Theme("covid", 9);
+       Theme precovid  = new Theme("precovid", 13);
        //postCovid
        postcovid.addMeme(makeMeme("postcovid", "meme01", "BOBET", "Mr.MVP himself"));
        postcovid.addMeme(makeMeme("postcovid", "meme02", "CLOWNS!", "This Gov is Circus"));
@@ -64,6 +77,20 @@ public class GameData {
        THEMES.add(covid);
        THEMES.add(precovid);
     }
+    
+     /**
+     * Builds one meme from its folder. The four clue pictures are found
+     * automatically inside /memes/{theme}/{memenum}/ and can each be a
+     * png, jpg or gif.
+     *
+     * @param theme    the theme folder name, e.g. "postcovid"
+     * @param memenum  the meme's folder name inside the theme, e.g. "meme01"
+     * @param answer   the answer, e.g. "BOY DILA" (spaces and punctuation are allowed)
+     * @param ansDialg the dialogue shown when the meme is solved
+     * @return a new Meme ready to be added to a theme
+     * @throws IllegalArgumentException if any of the four pictures is missing,
+     *         or the answer isn't 3 to 11 letters
+     */
     public static Meme makeMeme(String theme, String memenum, String answer, String ansDialg){
         String base = "/memes/" + theme + "/" + memenum + "/";
         return new Meme(answer, theme, new String[]{
@@ -72,11 +99,29 @@ public class GameData {
                         findImage(base, "3"),
                         findImage(base, "4")}, ansDialg);
     }
-    
+    /**
+     * Tells whether the player is allowed to open a theme. The first theme
+     * is always open; every other theme opens once the one before it
+     * has been completed.
+     *
+     * @param themeIndex the theme's position in {@link #THEMES} (0 is the first)
+     * @return true if the theme is unlocked, false if it's still locked
+     * @throws IndexOutOfBoundsException if there is no theme at that position
+     */
     public static boolean isUnlocked(int themeIndex) {
         if (themeIndex == 0) return true;
         return THEMES.get(themeIndex -1).isNextUnlocked();
     }
+    
+    /**
+     * Finds the picture file for one clue slide by trying png, then jpg,
+     * then gif, and using the first one that exists.
+     *
+     * @param base the meme folder path ending in "/", e.g. "/memes/covid/meme03/"
+     * @param num  the slide number as text, "1" to "4"
+     * @return the resource path of the picture that was found
+     * @throws IllegalArgumentException if none of the three file types exists
+     */
     public static String findImage(String base, String num) {
         String png = base + num + ".png";
         String jpg = base + num + ".jpg";
@@ -92,7 +137,7 @@ public class GameData {
             return gif;
         }
     throw new IllegalArgumentException(
-        "Image not found!"
+        "Image not found! IDK WHAT U DID ALDRIAN U MESSED IT UP BRO"
     );
     }
 }

@@ -6,7 +6,8 @@ package com.memegame.memepicsgame;
 
 /**
  *
- * @author Ade
+ * A short How to on playing a game ig A summerization
+ * Second use is for Credits and parts of the Group
  */
 public class MechanicsDialogue extends javax.swing.JDialog {
     

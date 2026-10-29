@@ -39,7 +39,7 @@
                           <Component id="btnTheme" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="lblAnswer" alignment="2" min="-2" pref="350" max="-2" attributes="0"/>
                           <Component id="lblMemePic" alignment="2" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="lblCongrats" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCongrats" alignment="2" min="-2" pref="294" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
@@ -85,6 +85,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="GALING!"/>
       </Properties>
     </Component>

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.memegame.memepicsgame;
 
 import java.util.ArrayList;
@@ -12,21 +8,46 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
+ * The main gameplay screen. It shows a meme's four clue pictures, a row of
+ * answer slots, and a grid of letter tiles. The player taps tiles to fill the
+ * slots and spell the answer. Tapping a filled slot sends its letter back to
+ * the tiles, and the Clue button spends a credit to fix mistakes and reveal
+ * the next correct letter.
+ * <p>
+ * When a meme is solved, the progress is saved and a congrats pop-up
+ * lets the player continue, go back to the menu, or go back to the themes.
  *
  * @author Ade
  */
 public class GameWindow extends javax.swing.JFrame {
+    // True when replaying a theme that's already fully solved.
     private boolean replay;
+    //In replay mode, the shuffled memes that haven't been shown yet. Not used otherwise.
     private ArrayList<Meme> pool;
+    //True once the current meme is solved, so extra clicks are ignored while the pop-up is open.
     private boolean roundDone = false;
+    //The meme currently on screen.
     private Meme current;
-    //buttons and slots decleration
+    /** 
+     * buttons and slots decleration
+     * The letter tiles the player picks from, and the answer slots they fill, both in order.
+    */
     private JButton[] letterButtons, slotButtons;
+    //  For each slot, the index of the letter tile its letter came from
     private int[] slotSource;
+    //How many clues the player has left. Each clue costs 1, and solving a meme gives 1 back.
     private int clueCredits = 9999;
+    //The theme being played
     private Theme theme;
     
-
+    
+    /**
+    * Puts a meme on screen: remembers it as the current one, builds the
+    * letter tiles and slots for its answer, and loads its four clue pictures.
+    * Animated gifs play as normal.
+    *
+    * @param m the meme to show
+    */
     private void showMeme(Meme m) {
         //fields need to maintain order
         current = m;
@@ -46,6 +67,10 @@ public class GameWindow extends javax.swing.JFrame {
 
     /**
      * Creates new form GameWindow
+     * player's current one, and shows the first meme.
+     * @param theme  the theme to play
+     * @param replay true to replay a finished theme (all of its memes, in
+     *     random order), false to play only the memes not solved yet
      */
     public GameWindow(Theme theme, boolean replay) {
         initComponents();
@@ -69,6 +94,14 @@ public class GameWindow extends javax.swing.JFrame {
         showMeme(pickNext());
     }
 
+     /**
+     * Sets up the letter tiles and answer slots for one meme. The tiles get
+     * the answer's letters plus random filler letters until every tile is
+     * used, all shuffled. Only as many slots are shown as the answer has
+     * letters, and every slot starts empty.
+     *
+     * @param answer the cleaned-up answer (no spaces or punctuation)
+     */
     private void setupLetters(String answer) {
         //array that can grow not a fixed amount, good for taking the answer+generated letters.
         ArrayList<Character> letters = new ArrayList<>();
@@ -99,7 +132,11 @@ public class GameWindow extends javax.swing.JFrame {
             slotSource[s] = -1;
         }
     }
-    
+    /**
+     * Collects what the player has spelled so far.
+     *
+     * @return the letters in the visible slots, in order
+     */    
     private String getGuess() {
         String guess = "";
         for (int s = 0; s < slotButtons.length; s++) {
@@ -109,7 +146,11 @@ public class GameWindow extends javax.swing.JFrame {
         }
         return guess;
     }
-
+    /**
+     * Checks whether every slot in use has a letter in it.
+     *
+     * @return true if no visible slot is empty
+     */
     private boolean slotsFull() {
         for (int s = 0; s < slotButtons.length; s++) {
             if (slotButtons[s].isVisible() && slotSource[s] == -1) {
@@ -118,18 +159,29 @@ public class GameWindow extends javax.swing.JFrame {
         }
         return true;
     }
-
+    /**
+     * Runs after every tile click or clue. Once all slots are full, it checks the guess:
+     * <ul>
+     *   <li>If correct, the player earns one clue, progress is saved, and the
+     *       congrats pop-up opens. Depending on the player's choice, the game
+     *       goes to the next meme, the main menu, or the theme screen. If
+     *       there are no memes left, it goes to the theme screen.</li>
+     *   <li>If wrong, the slots turn red until the player changes a letter.</li>
+     * </ul>
+     * Does nothing while slots are still empty.
+     */
     private void checkIfDone() {
         if (slotsFull() && current.checkAnswer(getGuess())) {
             clueCredits++;
             SaveManager.save();
             lblCredits.setText("Clues: " + clueCredits);
             roundDone = true;
-            //meowmewomeow
+            //HAHAHAHHA WTF IS THIS RIGHT?! TRACKING :3
             CongratsDialog dlg = new CongratsDialog(this, true);
-            dlg.setMeme(current);
+            dlg.setMeme(current, theme);
             dlg.setHasNext(replay ? !pool.isEmpty() : theme.getRandomUnsolved() != null); 
             dlg.setVisible(true);
+            //meowmeowmoewmeowmoemweomwo
             String choice = dlg.getChoice();
             if (choice.equals("menu")) {
                 new MainWindow().setVisible(true);
@@ -152,6 +204,13 @@ public class GameWindow extends javax.swing.JFrame {
             }
         }
     }
+    /**
+     * Gets the next meme to play.
+     *
+     * @return in replay mode, the next meme from the shuffled pool; otherwise
+     *         a random unsolved meme from the theme. Returns null if there
+     *         are none left.
+     */    
     private Meme pickNext() {
         if(replay) return pool.isEmpty() ? null : pool.remove(0);
         return theme.getRandomUnsolved();
@@ -402,7 +461,13 @@ public class GameWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+     /**
+     * Handles a click on any letter tile (all the tiles share this method).
+     * Moves the clicked tile's letter into the first empty slot and hides
+     * the tile, then checks whether the answer is complete.
+     *
+     * @param evt the button click event
+     */
     private void btnLetter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLetter1ActionPerformed
         if (roundDone) {
             return;
@@ -424,7 +489,13 @@ public class GameWindow extends javax.swing.JFrame {
         }
         checkIfDone();
     }//GEN-LAST:event_btnLetter1ActionPerformed
-
+    /**
+     * Handles a click on an answer slot (slots 1 to 10 share this method).
+     * If the slot has a letter, it's removed and its tile comes back.
+     * It also clears the red color left by a wrong guess.
+     *
+     * @param evt the button click event
+     */
     private void btnSlot1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSlot1ActionPerformed
         if (roundDone) {
             return;
@@ -444,7 +515,14 @@ public class GameWindow extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnSlot1ActionPerformed
-
+    /**
+     * Handles the Clue button. It costs one clue and does nothing if there
+     * are none left. Every wrong letter is sent back to its tile first, then
+     * the first empty slot is filled with the letter it should have. This
+     * can finish the answer.
+     *
+     * @param evt the button click event
+     */
     private void btnCluebtnLetter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCluebtnLetter1ActionPerformed
         if (roundDone) {
             return;
@@ -486,12 +564,12 @@ public class GameWindow extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnCluebtnLetter1ActionPerformed
-
+    // just going back to themes :/
     private void btnReturntoThemesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturntoThemesActionPerformed
         new ThemeWindow().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnReturntoThemesActionPerformed
-
+    
     private void btnSlot11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSlot11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSlot11ActionPerformed
