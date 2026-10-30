@@ -70,76 +70,57 @@ public class ThemeWindow extends BaseWindow {
         pbPostcovid = new javax.swing.JProgressBar();
         pbCovid = new javax.swing.JProgressBar();
         pbPrecovid = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Select Theme");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titleTheme.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        titleTheme.setFont(new java.awt.Font("Arial", 3, 36)); // NOI18N
+        titleTheme.setForeground(new java.awt.Color(255, 255, 255));
         titleTheme.setText("Select a Theme");
+        getContentPane().add(titleTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 20, -1, -1));
 
-        btnBack.setText("Back");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_1themeback.png"))); // NOI18N
         btnBack.addActionListener(this::btnBackActionPerformed);
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 105, 41));
 
-        btnPostcovid.setText("Post Covid");
+        btnPostcovid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_posttheme.png"))); // NOI18N
         btnPostcovid.addActionListener(this::btnPostcovidActionPerformed);
+        getContentPane().add(btnPostcovid, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 220, 350));
 
-        btnCovid.setText("Covid");
+        btnCovid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_covidtheme.png"))); // NOI18N
         btnCovid.addActionListener(this::btnCovidActionPerformed);
+        getContentPane().add(btnCovid, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 220, 350));
 
-        btnPrecovid.setText("Pre Covid");
+        btnPrecovid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_pretheme.png"))); // NOI18N
         btnPrecovid.addActionListener(this::btnPrecovidActionPerformed);
+        getContentPane().add(btnPrecovid, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 110, 220, 350));
+        getContentPane().add(pbPostcovid, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 470, 220, 26));
+        getContentPane().add(pbCovid, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 470, 220, 30));
+        getContentPane().add(pbPrecovid, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 470, 220, 26));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(titleTheme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(btnPostcovid)
-                .addGap(219, 219, 219)
-                .addComponent(btnCovid)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPrecovid)
-                .addGap(142, 142, 142))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(pbPostcovid, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116)
-                .addComponent(pbCovid, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
-                .addComponent(pbPrecovid, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pbCovid, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titleTheme)
-                            .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnPostcovid)
-                            .addComponent(btnCovid)
-                            .addComponent(btnPrecovid))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pbPostcovid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pbPrecovid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(65, 65, 65))
-        );
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Pre-Covid");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 90, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Post-Covid");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Covid");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/themebg.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,6 +173,10 @@ public class ThemeWindow extends BaseWindow {
     private javax.swing.JButton btnCovid;
     private javax.swing.JButton btnPostcovid;
     private javax.swing.JButton btnPrecovid;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JProgressBar pbCovid;
     private javax.swing.JProgressBar pbPostcovid;
     private javax.swing.JProgressBar pbPrecovid;

@@ -1,5 +1,16 @@
-current=0
+current=1
 /memes/postcovid/meme01
 /memes/postcovid/meme02
+/memes/postcovid/meme03
 /memes/postcovid/meme04
 /memes/postcovid/meme05
+/memes/postcovid/meme06
+/memes/postcovid/meme07
+/memes/postcovid/meme08
+/memes/postcovid/meme09
+/memes/postcovid/meme10
+/memes/postcovid/meme11
+/memes/postcovid/meme12
+/memes/postcovid/meme13
+/memes/postcovid/meme14
+/memes/postcovid/meme15

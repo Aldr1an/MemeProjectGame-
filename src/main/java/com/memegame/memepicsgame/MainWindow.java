@@ -26,64 +26,65 @@ public class MainWindow extends BaseWindow {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleName = new javax.swing.JLabel();
-        btnContinue = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         btnTheme = new javax.swing.JButton();
+        btnContinue = new javax.swing.JButton();
         btnMechanics = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Meme Pics");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titleName.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        titleName.setText("4pics, 1Meme");
-        titleName.setName(""); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("PLAY/CONTINUE");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
 
-        btnContinue.setText("Continue / New Game");
-        btnContinue.addActionListener(this::btnContinueActionPerformed);
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("EXIT");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, -1, -1));
 
-        btnTheme.setText("Select Theme");
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("PICK THEME");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, 20));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("MECHANICS/CREDITS");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 130, -1));
+
+        btnTheme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_picktheme.png"))); // NOI18N
+        btnTheme.setToolTipText("theme");
         btnTheme.addActionListener(this::btnThemeActionPerformed);
+        getContentPane().add(btnTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 80, 70));
 
+        btnContinue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_play.png"))); // NOI18N
+        btnContinue.addActionListener(this::btnContinueActionPerformed);
+        getContentPane().add(btnContinue, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 80, 70));
+
+        btnMechanics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_mechanic.png"))); // NOI18N
         btnMechanics.setText("Mechanics / Credits");
         btnMechanics.addActionListener(this::btnMechanicsActionPerformed);
+        getContentPane().add(btnMechanics, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 80, 70));
 
-        btnClose.setText("Close Game");
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_1exit.png"))); // NOI18N
         btnClose.addActionListener(this::btnCloseActionPerformed);
+        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 80, 70));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(btnMechanics)
-                    .addComponent(btnClose)
-                    .addComponent(titleName, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnContinue)
-                    .addComponent(btnTheme))
-                .addGap(351, 351, 351))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnClose, btnContinue, btnMechanics, btnTheme});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(titleName)
-                .addGap(47, 47, 47)
-                .addComponent(btnContinue)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTheme)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMechanics)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnClose)
-                .addContainerGap(167, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_4_pics_1_meme_2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -151,6 +152,10 @@ public class MainWindow extends BaseWindow {
     private javax.swing.JButton btnContinue;
     private javax.swing.JButton btnMechanics;
     private javax.swing.JButton btnTheme;
-    private javax.swing.JLabel titleName;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
