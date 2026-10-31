@@ -30,11 +30,11 @@ public class MainWindow extends BaseWindow {
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnTheme = new javax.swing.JButton();
-        btnContinue = new javax.swing.JButton();
-        btnMechanics = new javax.swing.JButton();
-        btnClose = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnClose = new javax.swing.JButton();
+        btnContinue = new javax.swing.JButton();
+        btnTheme = new javax.swing.JButton();
+        btnMechanics = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Meme Pics");
@@ -45,13 +45,13 @@ public class MainWindow extends BaseWindow {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("PLAY/CONTINUE");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("EXIT");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -63,28 +63,28 @@ public class MainWindow extends BaseWindow {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MECHANICS/CREDITS");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 130, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 130, -1));
 
-        btnTheme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_picktheme.png"))); // NOI18N
-        btnTheme.setToolTipText("theme");
-        btnTheme.addActionListener(this::btnThemeActionPerformed);
-        getContentPane().add(btnTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 80, 70));
-
-        btnContinue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_play.png"))); // NOI18N
-        btnContinue.addActionListener(this::btnContinueActionPerformed);
-        getContentPane().add(btnContinue, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 80, 70));
-
-        btnMechanics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_mechanic.png"))); // NOI18N
-        btnMechanics.setText("Mechanics / Credits");
-        btnMechanics.addActionListener(this::btnMechanicsActionPerformed);
-        getContentPane().add(btnMechanics, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 80, 70));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_mainbg.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_1exit.png"))); // NOI18N
         btnClose.addActionListener(this::btnCloseActionPerformed);
         getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, 80, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_4_pics_1_meme_2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        btnContinue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_play.png"))); // NOI18N
+        btnContinue.addActionListener(this::btnContinueActionPerformed);
+        getContentPane().add(btnContinue, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 80, 70));
+
+        btnTheme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_picktheme.png"))); // NOI18N
+        btnTheme.setToolTipText("theme");
+        btnTheme.addActionListener(this::btnThemeActionPerformed);
+        getContentPane().add(btnTheme, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 80, 70));
+
+        btnMechanics.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_mechanic.png"))); // NOI18N
+        btnMechanics.setText("Mechanics / Credits");
+        btnMechanics.addActionListener(this::btnMechanicsActionPerformed);
+        getContentPane().add(btnMechanics, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 80, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
