@@ -260,208 +260,187 @@ public class GameWindow extends BaseWindow {
         btnLetter11 = new javax.swing.JButton();
         btnLetter12 = new javax.swing.JButton();
         btnReturntoThemes = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GameWindow");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPic1.setText("Pic 1");
         lblPic1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 202, 200));
 
         lblPic2.setText("Pic 2");
         lblPic2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblPic2, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 70, 202, 200));
 
         lblPic3.setText("Pic 3");
         lblPic3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblPic3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 202, 200));
 
         lblPic4.setText("Pic 4");
         lblPic4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lblPic4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 202, 200));
 
+        btnSlotPanel.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnSlot1.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot1.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot1.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot1);
 
+        btnSlot2.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot2.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot2.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot2);
 
+        btnSlot3.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot3.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot3.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot3);
 
+        btnSlot4.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot4.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot4.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot4);
 
+        btnSlot5.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot5.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot5.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot5);
 
+        btnSlot6.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot6.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot6.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot6);
 
+        btnSlot7.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot7.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot7.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot7);
 
+        btnSlot8.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot8.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot8.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot8);
 
+        btnSlot9.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot9.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot9.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot9);
 
+        btnSlot10.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot10.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot10.addActionListener(this::btnSlot1ActionPerformed);
         btnSlotPanel.add(btnSlot10);
 
+        btnSlot11.setBackground(new java.awt.Color(204, 204, 204));
         btnSlot11.setPreferredSize(new java.awt.Dimension(40, 40));
         btnSlot11.addActionListener(this::btnSlot11ActionPerformed);
         btnSlotPanel.add(btnSlot11);
+
+        getContentPane().add(btnSlotPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 533, -1));
 
         btnClue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnClue.setText("Clue");
         btnClue.setActionCommand("");
         btnClue.setPreferredSize(new java.awt.Dimension(60, 40));
         btnClue.addActionListener(this::btnCluebtnLetter1ActionPerformed);
+        getContentPane().add(btnClue, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 600, -1, 100));
 
         lblCredits.setBackground(new java.awt.Color(255, 255, 255));
-        lblCredits.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCredits.setFont(new java.awt.Font("Garamond", 1, 14)); // NOI18N
         lblCredits.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(lblCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 111, 31));
 
+        btnPanel.setBackground(new java.awt.Color(0, 0, 0));
         btnPanel.setDoubleBuffered(false);
         btnPanel.setPreferredSize(new java.awt.Dimension(360, 110));
         btnPanel.setLayout(new java.awt.GridLayout(2, 6, 8, 8));
 
+        btnLetter1.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter1.setText("A");
         btnLetter1.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter1.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter1);
 
+        btnLetter2.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter2.setText("B");
         btnLetter2.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter2.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter2);
 
+        btnLetter3.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter3.setText("C");
         btnLetter3.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter3.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter3);
 
+        btnLetter5.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter5.setText("E");
         btnLetter5.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter5.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter5);
 
+        btnLetter6.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter6.setText("F");
         btnLetter6.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter6.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter6);
 
+        btnLetter7.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter7.setText("G");
         btnLetter7.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter7.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter7);
 
+        btnLetter8.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter8.setText("H");
         btnLetter8.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter8.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter8);
 
+        btnLetter9.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter9.setText("I");
         btnLetter9.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter9.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter9);
 
+        btnLetter4.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter4.setText("D");
         btnLetter4.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter4.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter4);
 
+        btnLetter10.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter10.setText("J");
         btnLetter10.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter10.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter10);
 
+        btnLetter11.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter11.setText("K");
         btnLetter11.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter11.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter11);
 
+        btnLetter12.setBackground(new java.awt.Color(204, 204, 204));
         btnLetter12.setText("L");
         btnLetter12.setPreferredSize(new java.awt.Dimension(40, 40));
         btnLetter12.addActionListener(this::btnLetter1ActionPerformed);
         btnPanel.add(btnLetter12);
 
+        getContentPane().add(btnPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, -1, -1));
+
         btnReturntoThemes.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         btnReturntoThemes.setText("<-- Return To Themes");
         btnReturntoThemes.setActionCommand("");
         btnReturntoThemes.addActionListener(this::btnReturntoThemesActionPerformed);
+        getContentPane().add(btnReturntoThemes, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 14, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnReturntoThemes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(lblPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)
-                                .addComponent(lblPic2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)
-                                .addComponent(lblPic3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblPic4, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(203, 203, 203)
-                                .addComponent(btnSlotPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 60, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnClue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(251, 251, 251))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblPic1, lblPic2, lblPic3, lblPic4});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReturntoThemes))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPic2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPic3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPic4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(btnSlotPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnClue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))
-                    .addComponent(btnPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblPic1, lblPic2, lblPic3, lblPic4});
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 700, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -627,6 +606,7 @@ public class GameWindow extends BaseWindow {
     private javax.swing.JButton btnSlot8;
     private javax.swing.JButton btnSlot9;
     private javax.swing.JPanel btnSlotPanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCredits;
     private javax.swing.JLabel lblPic1;
     private javax.swing.JLabel lblPic2;
