@@ -259,8 +259,9 @@ public class GameWindow extends BaseWindow {
         btnLetter10 = new javax.swing.JButton();
         btnLetter11 = new javax.swing.JButton();
         btnLetter12 = new javax.swing.JButton();
-        btnReturntoThemes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnReturntoThemes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GameWindow");
@@ -269,19 +270,19 @@ public class GameWindow extends BaseWindow {
 
         lblPic1.setText("Pic 1");
         lblPic1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lblPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 202, 200));
+        getContentPane().add(lblPic1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 200, 200));
 
         lblPic2.setText("Pic 2");
         lblPic2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lblPic2, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 70, 202, 200));
+        getContentPane().add(lblPic2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 200, 200));
 
         lblPic3.setText("Pic 3");
         lblPic3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lblPic3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 202, 200));
+        getContentPane().add(lblPic3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 200, 190));
 
         lblPic4.setText("Pic 4");
         lblPic4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lblPic4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 202, 200));
+        getContentPane().add(lblPic4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 200, 190));
 
         btnSlotPanel.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -340,19 +341,19 @@ public class GameWindow extends BaseWindow {
         btnSlot11.addActionListener(this::btnSlot11ActionPerformed);
         btnSlotPanel.add(btnSlot11);
 
-        getContentPane().add(btnSlotPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 533, -1));
+        getContentPane().add(btnSlotPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 533, -1));
 
         btnClue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnClue.setText("Clue");
+        btnClue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/clue.png"))); // NOI18N
         btnClue.setActionCommand("");
         btnClue.setPreferredSize(new java.awt.Dimension(60, 40));
         btnClue.addActionListener(this::btnCluebtnLetter1ActionPerformed);
-        getContentPane().add(btnClue, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 600, -1, 100));
+        getContentPane().add(btnClue, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 600, 60, 100));
 
         lblCredits.setBackground(new java.awt.Color(255, 255, 255));
         lblCredits.setFont(new java.awt.Font("Garamond", 1, 14)); // NOI18N
         lblCredits.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(lblCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 660, 111, 31));
+        getContentPane().add(lblCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 570, 111, 31));
 
         btnPanel.setBackground(new java.awt.Color(0, 0, 0));
         btnPanel.setDoubleBuffered(false);
@@ -433,14 +434,17 @@ public class GameWindow extends BaseWindow {
 
         getContentPane().add(btnPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, -1, -1));
 
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 700, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/design/rsz_gwbg.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         btnReturntoThemes.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         btnReturntoThemes.setText("<-- Return To Themes");
         btnReturntoThemes.setActionCommand("");
         btnReturntoThemes.addActionListener(this::btnReturntoThemesActionPerformed);
-        getContentPane().add(btnReturntoThemes, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 14, -1, -1));
-
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 700, -1, -1));
+        getContentPane().add(btnReturntoThemes, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 23, -1, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -607,6 +611,7 @@ public class GameWindow extends BaseWindow {
     private javax.swing.JButton btnSlot9;
     private javax.swing.JPanel btnSlotPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCredits;
     private javax.swing.JLabel lblPic1;
     private javax.swing.JLabel lblPic2;
